@@ -1,0 +1,95 @@
+<html lang="en" ng-app="myAppIndex">
+<head>
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+  <body ng-app="myAppIndex" ng-controller="loginController">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<row>
+    <div  class="offset-md-4 col-md-4" style="float: none;
+    margin: 0 auto;">
+        <h3><b> LOGIN </b></h3>
+        <br/>
+        <br/>
+        <form >
+            <label>Nome de usuário</label>
+            <input class='form-control' type="text" name="login" id="login" ng-model="usuario.login"/><br/>
+            <label>Senha</label>
+            <input class='form-control' type="password" name="senha" id="senha" ng-model="usuario.senha"/><br/>
+            <button id="myBtn" class="btn btn-primary" data-toggle="modal" data-target="#Forgot">Esqueci minha senha</button>
+            <input class='btn btn-primary' type="submit" align="center" value="Login" ng-click="logar()"/>
+        </form>
+    </div>
+<div id="Forgot" class="modal fade" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <!-- Modal content -->
+      <button type="button" class="close"
+         data-dismiss="modal">
+             <span aria-hidden="true">&times;</span>
+             <span class="sr-only">Close</span>
+      </button>
+      <div class="form-gap"></div>
+<div class="container">
+ <div class="">
+   <div class="">
+           <div class="panel panel-default">
+             <div class="panel-body">
+               <div class="text-center">
+                 <h3><i class="fa fa-lock fa-4x"></i></h3>
+                 <h2 class="text-center">Esqueceu sua senha?</h2>
+                 <p>Você pode recuperar aqui.</p>
+                 <div class="panel-body">
+
+                   <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+
+                     <div class="form-group">
+                       <div class="input-group">
+
+                         <input id="email" ng-model="email" name="email" placeholder="E-mail" class="form-control"  type="email">
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <input name="recover-submit" ng-click="recuperar()" class="btn btn-lg btn-primary btn-block" value="Recuperar senha" type="submit">
+                     </div>
+
+                     <input type="hidden" class="hide" name="token" id="token" value="">
+                   </form>
+
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <script src="js/jquery-min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Angular -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/textAngular-rangy.min.js"></script>
+  <script src="js/textAngular-sanitize.min.js"></script>
+  <script src="js/textAngular.min.js"></script>
+
+  <!-- Aplicação Principal Angular-->
+  <script src="appIndex.js"></script>
+  <script src="controller/loginController.js"></script>
+</body>
+</html>

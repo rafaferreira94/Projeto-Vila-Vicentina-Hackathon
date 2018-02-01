@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAppIndex">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+    <title>Vila Vicentina</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/line-icons.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/owl.theme.css">
+    <link rel="stylesheet" href="../css/nivo-lightbox.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/slicknav.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/textAngular.css">
+
+
+  </head>
+  <body>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.11';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <!-- Header Section Start -->
+    <header id="hero-area" data-stellar-background-ratio="0.5">
+        <div class="row hero-area-filho hero-area-filho" style="background-color: #2E2F8F" ng-controller="menuController">
+           <div class="col-md-2">
+           </div>
+            <div class="col-md-7">
+             <button class="astext" ng-click="abrirUsuarios()" style="font-size: 16px; color: white"> USUÁRIOS  </button><span> &nbsp&nbsp&nbsp </span><button class="astext" ng-click="abrirVoluntarios()" style="color: white; font-size: 16px">  VOLUNTÁRIOS </button>
+            </div>
+              <div class="col-md-1">
+              <button class="astext" ng-click="logout()" style="font-size: 16px; color: white"> SAIR </button>
+            </div>
+          </div>
+
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg  scrolling-navbar indigo hero-area-filho">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a href="index.html" class="navbar-brand"><img class="img-fulid" src="../img/vila.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="lnr lnr-menu"></i>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse nav-section" id="main-navbar">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#hero-area">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#contrib">Contribua</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#visita">Como Visitar</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link page-scroll" href="#serv">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#ativ">Atividades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#transp">Transparencia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#hist">História</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#contato">Contato</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Start -->
+        <ul class="mobile-menu">
+           <li>
+              <a class="page-scroll" href="#hero-area">Início</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#contrib">Contribua</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#visita">Como Visitar</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#serv">Serviços</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#ativ">Atividades</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#transp">Transparencia</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#hist">História</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#contato">Contato</a>
+            </li>
+        </ul>
+        <!-- Mobile Menu End -->
+
+      </nav>
+      <!-- Navbar End -->
+      <div ng-controller="headerController" >
+        <div class="container">
+          <div ng-mouseover="edit=true" ng-mouseleave="edit=false" class="row justify-content-md-center">
+            <div class="col-md-10">
+              <div class="contents text-center hero-area-filho">
+                <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">{{titulo}}</h1>
+                <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">{{bio}}</p>
+                <div class="icon show" ng-show="edit" data-toggle="modal" data-target="#ModalHeader">
+                    <i class="lnr lnr-pencil"></i>
+                </div>
+                    <button href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalVoluntario"> Seja um volunttário! </button>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- Modal editar HEADER -->
+<div class="modal fade" id="ModalHeader" tabindex="-1" role="dialog"
+           aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content modal-edit">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <button type="button" class="close"
+                         data-dismiss="modal">
+                             <span aria-hidden="true">&times;</span>
+                             <span class="sr-only">Fechar</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                          Editar Cabeçalho
+                      </h4>
+                  </div>
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                      <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label  class="col-sm-2 control-label"
+                                    for="inputEmail3">Título</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control modal-edit"
+                              id="inputEmail3" placeholder="Título" ng-model="titulo"/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-2 control-label"
+                                    for="inputEmail3">Bio</label>
+                          <div >
+                            <textarea class="form-control modal-edit" id="exampleTextarea" rows="3"
+                             placeholder="Bio" ng-model="bio">
+                            </textarea>
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default"
+                              data-dismiss="modal">
+                                  Fechar
+                      </button>
+                      <input type='file' id='verborgen_file' />
+                      <button type="button" value="Upload" id="uploadButton" class="btn btn-primary"
+                              data-dismiss="modal">Carregar imagem</button>
+                      <button id="btnSave" type="button" ng-click="onClickSave()" class="btn btn-primary" data-dismiss="modal">
+                          Salvar Alterações
+                      </button>
+                  </div>
+              </div>
+            </div>
+        </div>
+      <!--FIM - Modal editar HEADER -->
+      </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Contribua Section Start -->
+    <section id="contrib" class="section">
+        <div class="container" ng-controller="contriController">
+          <div class="section-header">
+            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Contribua</h2>
+            <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+            <!-- <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p> -->
+          </div>
+          <div class="row">
+
+              <div ng-mouseover="editDoa=true" ng-mouseleave="editDoa=false" class="col-md-4 col-sm-6">
+                <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+                  <!-- <div class="icon">
+                    <i class="lnr lnr-pencil"></i>
+                  </div> -->
+                  <h4>Doações <i class="lnr lnr-pencil show"  ng-show="editDoa" data-toggle="modal" data-target="#ModalEditDoa"></i></h4>
+                  <div>
+                      <p>Banco do Brasil</p>
+                      <p>AG: 68535 C/C: 0247-x</p>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <form action="https://www.paypal.com/cgi-bin/webscr" method="post"
+                              target="_top">
+                              <input type="hidden" name="cmd" value="_s-xclick">
+                              <input type="hidden" name="hosted_button_id" value="GE4MV2PJACBW2">
+                              <input type="image"
+                              src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif"
+                              border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar
+                              pagamentos online!">
+                              <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif"
+                              width="1" height="1">
+                              </form>
+                          </div>
+                          <div class="col-md-6">
+                              <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html"
+                              method="post">
+
+                              <input type="hidden" name="currency" value="BRL" />
+                              <input type="hidden" name="receiverEmail" value="vilavicentina@terra.com.br" />
+                              <input type="hidden" name="iot" value="button" />
+                              <input type="image"
+                              src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/120x53-doar.gif"
+                              name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                              </form>
+                          </div>
+                      </div>
+
+
+                      <!-- <p>&nbsp;</p> -->
+
+                      <!-- <div ng-bind-html="doahtml" class="div-limit"></div> -->
+                      <button id="myBtn" class="astext" data-toggle="modal" data-target="#DoaMore">Ver mais</button>
+                  </div>
+                </div>
+            </div>
+
+            <div ng-mouseover="editPre=true" ng-mouseleave="editPre=false" class="col-md-4 col-sm-6">
+              <div class="item-boxes wow fadeInDown fillingBox" data-wow-delay="0.2s">
+                <h4>Precisamos <i class="lnr lnr-pencil show"  ng-show="editPre" data-toggle="modal" data-target="#ModalEditPre"></i></h4>
+                <div>
+                    <div ng-bind-html="preText" class="div-limit" style="color: white"></div>
+                    <button id="myBtn" class="astext" style="color: white !important"  data-toggle="modal" data-target="#PreMore">Ver mais</button>
+                </div>
+             </div>
+            </div>
+
+            <div ng-mouseover="editBaz=true" ng-mouseleave="editBaz=false" class="col-md-4 col-sm-6">
+              <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+                <h4>Bazar <i class="lnr lnr-pencil show"  ng-show="editBaz" data-toggle="modal" data-target="#ModalEditBaz"></i></h4>
+                <p><b>{{bazHor}}</b></p>
+                <div ng-bind-html="bazhtml" class="div-limit"></div>
+                <button id="myBtn" class="astext" data-toggle="modal" data-target="#BazarMore">Ver mais</button>
+             </div>
+            </div>
+
+          </div>
+          <!-- Modal EDIT DOA -->
+          <div class="modal fade" id="ModalEditDoa" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal-edit">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                           data-dismiss="modal">
+                               <span aria-hidden="true">&times;</span>
+                               <span class="sr-only">Fechar</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Editar Doação
+                        </h4>
+                    </div>
+                    <!-- Modal Body -->
+                    <text-angular class="modal-edit" ng-model="doahtml"></text-angular>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                                    Fechar
+                        </button>
+                        <button type="button" ng-click="onClickSaveDoacao()" class="btn btn-primary" data-dismiss="modal">
+                            Salvar Alterações
+                        </button>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!--FIM - Modal EDIT DOA -->
+          <!-- Modal EDIT PRE -->
+          <div class="modal fade" id="ModalEditPre" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content modal-edit">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <button type="button" class="close"
+                                   data-dismiss="modal">
+                                       <span aria-hidden="true">&times;</span>
+                                       <span class="sr-only">Fechar</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    Editar Precisamos
+                                </h4>
+                            </div>
+                            <!-- Modal Body -->
+                            <text-angular class="modal-edit" ng-model="preText"></text-angular>
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default"
+                                        data-dismiss="modal">
+                                            Fechar
+                                </button>
+                                <button type="button" ng-click="onClickSavePrecisamos()" class="btn btn-primary" data-dismiss="modal">
+                                    Salvar Alterações
+                                </button>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                <!--FIM - Modal EDIT PRE -->
+                <!-- Modal EDIT BAZ -->
+                <div class="modal fade" id="ModalEditBaz" tabindex="-1" role="dialog"
+                   aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content modal-edit">
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                              <button type="button" class="close"
+                                 data-dismiss="modal">
+                                     <span aria-hidden="true">&times;</span>
+                                     <span class="sr-only">Fechar</span>
+                              </button>
+                              <h4 class="modal-title" id="myModalLabel">
+                                  Editar Bazar
+                              </h4>
+                          </div>
+                          <!-- Modal Body -->
+                          <div class="form-group">
+                            <label  class="col-sm-2 control-label"
+                                      for="inputEmail3">Funcionamento</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modal-edit"
+                                id="inputEmail3" placeholder="Título" ng-model="bazHor"/>
+                            </div>
+                          </div>
+                          <text-angular class="modal-edit" ng-model="bazhtml"></text-angular>
+                          <!-- Modal Footer -->
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default"
+                                      data-dismiss="modal">
+                                          Fechar
+                              </button>
+                              <button type="button" ng-click="onClickSaveBazar()" class="btn btn-primary" data-dismiss="modal">
+                                  Salvar Alterações
+                              </button>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <!--FIM - Modal EDIT BAZ -->
+          <!-- Modal more Bazar -->
+          <div id="BazarMore" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content modal-edit">
+                  <div class="modal-header">
+                    <button type="button" class="close"
+                       data-dismiss="modal">
+                           <span aria-hidden="true">&times;</span>
+                           <span class="sr-only">Fechar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Bazar
+                    </h4>
+                  </div>
+                  <div class="modal-body">
+                    <p><b>{{bazHor}}</b></p>
+                    <div ng-bind-html="bazhtml"></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!--FIM- Modal more Bazar -->
+          <!-- Modal more Pre -->
+          <div id="PreMore" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content modal-edit">
+                  <div class="modal-header">
+                    <button type="button" class="close"
+                       data-dismiss="modal">
+                           <span aria-hidden="true">&times;</span>
+                           <span class="sr-only">Fechar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Precisamos
+                    </h4>
+                  </div>
+                  <div class="modal-body">
+                    <div ng-bind-html="preText"></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!--FIM- Modal more Pre -->
+
+          <!-- Modal more DOA -->
+          <div id="DoaMore" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content modal-edit">
+                  <div class="modal-header">
+                    <button type="button" class="close"
+                       data-dismiss="modal">
+                           <span aria-hidden="true">&times;</span>
+                           <span class="sr-only">Fechar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Doações
+                    </h4>
+                  </div>
+                  <div class="modal-body">
+                    <div ng-bind-html="doahtml"></div>
+
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!-- Modal more DOA -->
+        </div>
+    </section>
+    <!-- Contribua Section End -->
+
+    <!-- Como Visitiar Section Start -->
+    <section id="visita" class="section visita">
+        <div class="container" ng-controller="visitController">
+            <div class="section-header" ng-mouseover="edit=true" ng-mouseleave="edit=false">
+                <h2 class="visita-filho section-title" style="color: white">Como Visitar <i class="lnr lnr-pencil icon show"  ng-show="edit" data-toggle="modal" data-target="#ModalEditVisit"></i></h2>
+                <hr class="lines">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="visita-filho section-subtitle" style="color: white">{{text}}</p>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="visita-filho show-box">
+                          <br></br>
+                          <iframe src="https://www.google.com.br/maps/embed?pb=!1m14!1m8!1m3!1d14762.77346723812!2d-49.0490753!3d-22.3274336!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc734151d860373bd!2sVila+Vicentina+Abrigos+para+velhos!5e0!3m2!1spt-BR!2sbr!4v1473426193979" align="center" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal EDIT PRE -->
+            <div class="modal fade" id="ModalEditVisit" tabindex="-1" role="dialog"
+                       aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content modal-edit">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                  <button type="button" class="close"
+                                     data-dismiss="modal">
+                                         <span aria-hidden="true">&times;</span>
+                                         <span class="sr-only">Fechar</span>
+                                  </button>
+                                  <h4 class="modal-title" id="myModalLabel">
+                                      Editar Como visitar
+                                  </h4>
+                              </div>
+                              <!-- Modal Body -->
+                              <div class="modal-body">
+                                  <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                      <label  class="col-sm-2 control-label"
+                                                for="inputEmail3">Texto</label>
+                                      <div >
+                                        <textarea class="form-control modal-edit" id="Textarea" rows="3"
+                                         placeholder="O que vocês mais precisam no momento" ng-model="text">
+                                        </textarea>
+                                      </div>
+                                    </div>
+                                  </form>
+                              </div>
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-default"
+                                          data-dismiss="modal">
+                                              Fechar
+                                  </button>
+                                  <button type="button" ng-click="onClickSave()" class="btn btn-primary" data-dismiss="modal">
+                                      Salvar Alterações
+                                  </button>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                  <!--FIM - Modal EDIT PRE -->
+        </div>
+    </section>
+    <!-- Como Visitiar Section End -->
+
+
+    <!-- Serviços Section Start -->
+    <section id="serv" class="serv section" ng-controller="servController">
+      <div class="container" ng-mouseover="edit=true" ng-mouseleave="edit=false">
+        <div class="section-header" >
+            <h2 class="section-title" style="color:white;">Serviços
+                <i class="lnr lnr-pencil icon show"  ng-show="edit" data-toggle="modal" data-target="#ModalEditServ"></i>
+            </h2>
+            <div class="touch-slider owl-carousel owl-theme">
+              <div class="testimonial-item">
+                <!-- <img src="{{servico.IMG}}" alt="Client Testimonoal" /> -->
+                <div class="testimonial-text">
+                  <h3>{{servicos[0].TITULO}}</h3>
+                  <p>{{servicos[0].DESCRICAO}}</p>
+                  <span>{{servicos[0].VALOR}}</span>
+                </div>
+              </div>
+              <div class="testimonial-item">
+                <!-- <img src="{{servico.IMG}}" alt="Client Testimonoal" /> -->
+                <div class="testimonial-text">
+                  <h3>{{servicos[1].TITULO}}</h3>
+                  <p>{{servicos[1].DESCRICAO}}</p>
+                  <span>{{servicos[1].VALOR}}</span>
+                </div>
+              </div>
+              <div  class="testimonial-item">
+                <!-- <img src="{{servico.IMG}}" alt="Client Testimonoal" /> -->
+                <div class="testimonial-text">
+                  <h3>{{servicos[0].TITULO}}</h3>
+                  <p>{{servicos[0].DESCRICAO}}</p>
+                  <span>{{servicos[0].VALOR}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  Modal Edit Serv -->
+          <div class="modal fade" id="ModalEditServ" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal-edit">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                           data-dismiss="modal">
+                               <span aria-hidden="true">&times;</span>
+                               <span class="sr-only">Fechar</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Editar Serviços
+                        </h4>
+                    </div>
+                    <!-- Modal Body -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-6 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Preço</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="usuario in listUsuarios | filter:pesquisa">
+                                            <th scope="row">{{servico.ID_SERVICO}}</th>
+                                            <td>{{servico.NOME}}</td>
+                                            <td>{{servico.DESC}}</td>
+                                            <td>{{servico.PRECO}}</td>
+                                            <td style="width: 20px;">
+                                                <button ng-click="openWindow(usuario)" type="button" class="btn btn-success"><i
+                                                        class="fa fa-eye" aria-hidden="true"></i></button>
+                                            </td>
+                                            <td style="width: 20px;">
+                                                <button ng-click="delete(usuario)" type="button" class="btn btn-success"><i class="fa "
+                                                                                                                            aria-hidden="true"></i>X
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                                    Fechar
+                        </button>
+                        <button type="button" ng-click="onClickSave()" class="btn btn-primary" data-dismiss="modal">
+                            Salvar Alterações
+                        </button>
+                        <button type="button" ng-click="incluir()" class="btn btn-success"><i
+                                class="fa fa-file-o" aria-hidden="true"></i> Incluir
+                        </button>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!--FIM-  Modal Edit Serv -->
+          <!-- Modal -->
+          <div class="modal fade" id="modalServico" role="dialog">
+              <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Incluir Serviço</h4>
+                      </div>
+                      <div class="modal-body">
+                          <form name="mainForm">
+                              <div class="input-group col-md-offset-2 col-md-8">
+                                  <span class="modal-edit">Nome</span>
+                                  <input class="form-control" ng-model="serv.NOME" id="nome" name="nome" type="text">
+                              </div>
+                              <div class="input-group col-md-offset-2 col-md-8">
+                                  <span class="modal-edit">Descrição</span>
+                                  <input class="form-control" ng-model="serv.DESC" id="sobrenome" name="sobrenome" type="text">
+                              </div>
+                              <div class="input-group col-md-offset-2 col-md-8">
+                                  <span class="modal-edit">Preço</span>
+                                  <input class="form-control" ng-model="serv.PRECO" id="dataNascimento"
+                                         name="emailUsuario" type="text">
+                              </div>
+                          </form>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default btn-fechar" data-dismiss="modal">Fechar</button>
+                          <button type="button" class="btn btn-success" data-dismiss="modal"
+                                  ng-click="salvarServico(serv)">Salvar
+                          </button>
+                      </div>
+                  </div>
+                  {{operacao}}
+              </div>
+          </div>
+        </div>
+      </section>
+    <!-- Bazar Section End -->
+
+    <!-- Atividades Section Start -->
+    <section id="ativ" class="section">
+    <div class="container" ng-controller="ativController">
+      <div class="section-header" >
+        <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Atividades</h2>
+        <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+        <!-- <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p> -->
+      </div>
+      <div class="row">
+
+          <div class="col-md-4">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s"  ng-mouseover="editCent=true" ng-mouseleave="editCent=false">
+              <!-- <div class="icon">
+                <i class="lnr lnr-pencil"></i>
+              </div> -->
+              <h4>Centro Dia <i class="lnr lnr-pencil show"  ng-show="editCent" data-toggle="modal" data-target="#ModalEditCent"></i></h4>
+              <div>
+                  <div ng-bind-html="centhtml" class="div-limit"></div>
+                  <button id="myBtn" class="astext" data-toggle="modal" data-target="#CentroMore">Ver mais</button>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s" ng-mouseover="editMiss=true" ng-mouseleave="editMiss=false">
+            <!-- <div class="icon">
+              <i class="lnr lnr-pencil"></i>
+            </div> -->
+            <h4>Missa  <i class="lnr lnr-pencil show"  ng-show="editMiss" data-toggle="modal" data-target="#ModalEditMiss"></i></h4>
+            <p class="div-limit">{{misstext}}</p>
+         </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+            <!-- <div class="icon">
+              <i class="lnr lnr-pencil"></i>
+            </div> -->
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvilavicentinabauru%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" width="600" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          </div>
+
+        </div>
+        <!-- Modal More Centro Dia -->
+        <div id="CentroMore" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <!-- Modal content -->
+              <div class="modal-content modal-edit">
+                <div class="modal-header">
+                  <button type="button" class="close"
+                     data-dismiss="modal">
+                         <span aria-hidden="true">&times;</span>
+                         <span class="sr-only">Fechar</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                      Centro Dia
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <div ng-bind-html="centhtml"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      <!-- FIM - Modal More Centro Dia -->
+      <!-- Modal EDIT CENT -->
+      <div class="modal fade" id="ModalEditCent" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-edit">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                       data-dismiss="modal">
+                           <span aria-hidden="true">&times;</span>
+                           <span class="sr-only">Fechar</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Editar Centro Dia
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <text-angular class="modal-edit" ng-model="centhtml"></text-angular>
+
+                <div ta-bind="text" ng-model="bazhtml" ta-readonly='disabled'></div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                                Fechar
+                    </button>
+                    <button type="button" ng-click="onClickSaveCentroDia()" class="btn btn-primary" data-dismiss="modal">
+                        Salvar Alterações
+                    </button>
+                </div>
+            </div>
+          </div>
+      </div>
+      <!--FIM - Modal EDIT CENT -->
+      <!-- Modal EDIT MISS -->
+      <div class="modal fade" id="ModalEditMiss" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-edit">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="close"
+                               data-dismiss="modal">
+                                   <span aria-hidden="true">&times;</span>
+                                   <span class="sr-only">Fechar</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                Editar Missa
+                            </h4>
+                        </div>
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            <form class="form-horizontal" role="form">
+                              <div class="form-group">
+                                <label  class="col-sm-2 control-label"
+                                          for="inputEmail3">Texto</label>
+                                <div >
+                                  <textarea class="form-control modal-edit" id="Textarea" rows="3"
+                                   placeholder="Detalhes da missa" ng-model="misstext">
+                                  </textarea>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default"
+                                    data-dismiss="modal">
+                                        Fechar
+                            </button>
+                            <button type="button" ng-click="onClickSaveMissa()" class="btn btn-primary" data-dismiss="modal">
+                                Salvar Alterações
+                            </button>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            <!--FIM - Modal EDIT PRE -->
+
+    </div>
+    </section>
+    <!-- Centro Dia Section End -->
+
+    <!-- Transparência Section Start -->
+    <section id="transp" class="serv section" ng-controller="transpController">
+      <div class="container" ng-mouseover="edit=true" ng-mouseleave="edit=false">
+        <div class="section-header" >
+            <h2 class="section-title" style="color:white;">Transparência
+                <i class="lnr lnr-pencil icon show"  ng-show="edit" data-toggle="modal" data-target="#ModalEditTrans"></i>
+            </h2>
+            <br/>
+            <br/>
+
+
+            <div  class="touch-slider owl-carousel owl-theme">
+              <div class="testimonial-item">
+                <div class="testimonial-text">
+
+                <a class="linkDoc" href="doc/{{transparencias[0].NOME_ARQUIVO}}">
+
+                <span>{{transparencias[0].DATA}}</span>
+                  <h3>{{transparencias[0].TITULO}}</h3>
+                  <p>{{transparencias[0].DESCRICAO}}</p>
+                </a>
+                </div>
+              </div>
+                <div class="testimonial-item">
+                <div class="testimonial-text">
+                <a class="linkDoc" href="doc/{{transparencias[0].NOME_ARQUIVO}}">
+
+                <span>{{transparencias[1].DATA}}</span>
+                  <h3>{{transparencias[1].TITULO}}</h3>
+                  <p>{{transparencias[1].DESCRICAO}}</p>
+              </a>
+                </div>
+              </div>
+                <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <a class="linkDoc" href="doc/{{transparencias[0].NOME_ARQUIVO}}">
+
+                <span>{{transparencias[0].DATA}}</span>
+                  <h3>{{transparencias[0].TITULO}}</h3>
+                  <p>{{transparencias[0].DESCRICAO}}</p>
+              </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+          <!--  Modal Edit Serv -->
+          <div class="modal fade" id="ModalEditTrans" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal-edit">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                           data-dismiss="modal">
+                               <span aria-hidden="true">&times;</span>
+                               <span class="sr-only">Fechar</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Editar Transparências
+                        </h4>
+                    </div>
+                    <!-- Modal Body -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-6 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Data</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="trans in transparencias | filter:pesquisa">
+                                            <th scope="row">{{trans.ID_SERVICO}}</th>
+                                            <td>{{trans.NOME}}</td>
+                                            <td>{{trans.DESC}}</td>
+                                            <td>{{trans.DATA}}</td>
+                                            <td style="width: 20px;">
+                                                <button ng-click="openWindow(trans)" type="button" class="btn btn-success"><i
+                                                        class="fa fa-eye" aria-hidden="true"></i></button>
+                                            </td>
+                                            <td style="width: 20px;">
+                                                <button ng-click="delete(trans)" type="button" class="btn btn-success"><i class="fa "
+                                                                                                                            aria-hidden="true"></i>X
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                                    Fechar
+                        </button>
+                        <button type="button" ng-click="onClickSave()" class="btn btn-primary" data-dismiss="modal">
+                            Salvar Alterações
+                        </button>
+                        <button type="button" ng-click="incluir()" class="btn btn-success"><i
+                                class="fa fa-file-o" aria-hidden="true"></i> Incluir
+                        </button>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!--FIM-  Modal Edit Serv -->
+          <!-- Modal -->
+          <div class="modal fade" id="modalTrans" role="dialog">
+              <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Incluir Transparência</h4>
+                      </div>
+                      <div class="modal-body">
+                          <form name="mainForm">
+                              <div class="input-group col-md-offset-2 col-md-8">
+                                  <span class="modal-edit">Nome</span>
+                                  <input class="form-control" ng-model="trans.NOME" id="nome" name="nome" type="text">
+                              </div>
+                              <div class="input-group col-md-offset-2 col-md-8">
+                                  <span class="modal-edit">Descrição</span>
+                                  <input class="form-control" ng-model="trans.DESC" id="sobrenome" name="sobrenome" type="text">
+                              </div>
+                              <div class="input-group col-md-offset-2 col-md-8">
+                                  <span class="modal-edit">Data</span>
+                                  <input class="form-control" ng-model="trans.DATA" id="dataNascimento"
+                                         name="emailUsuario" type="text">
+                              </div>
+                          </form>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default btn-fechar" data-dismiss="modal">Fechar</button>
+                          <input type='file' id='verborgen_file1' />
+                          <button type="button" value="Upload" id="uploadButton1" class="btn btn-primary"
+                                  data-dismiss="modal">Carregar arquivo</button>
+                          <button type="button" class="btn btn-success" data-dismiss="modal"
+                                  ng-click="salvarTrans(trans)">Salvar
+                          </button>
+                      </div>
+                  </div>
+                  {{operacao}}
+              </div>
+          </div>
+        </div>
+      </section>
+    <!-- Informacoes Uteis Section End -->
+    <!-- Historia Section Start -->
+    <section id="hist" class="section" ng-controller="histController">
+      <div class="container" ng-mouseover="edit=true" ng-mouseleave="edit=false">
+        <div class="section-header" >
+            <h2 class="section-title">História
+                <i class="lnr lnr-pencil icon show"  ng-show="edit" data-toggle="modal" data-target="#ModalHist"></i>
+            </h2>
+            <hr class="lines">
+
+            <!-- <p class="text-limit">{{}} </p> -->
+            <div class="div-limit">
+              <div ng-bind-html="htmlVariable"></div>
+            <!-- Trigger/Open The Modal -->
+            </div>
+            <!-- <a> -->
+            <button id="myBtn" class="astext" data-toggle="modal" data-target="#HistMore">Ver mais</button>
+            <!-- </a> -->
+             <!-- Modal more HISTORIA -->
+            <div id="HistMore" class="modal fade" tabindex="-1" role="dialog"
+               aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <!-- Modal content -->
+              <div class="modal-content modal-edit">
+                <div class="modal-header">
+                  <button type="button" class="close"
+                     data-dismiss="modal">
+                         <span aria-hidden="true">&times;</span>
+                         <span class="sr-only">Fechar</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                      História
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <div ng-bind-html="htmlVariable"></div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!--FIM - Modal more HISTORIA -->
+
+
+            <div class="modal fade" id="ModalHist" tabindex="-1" role="dialog"
+               aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content modal-edit">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                          <button type="button" class="close"
+                             data-dismiss="modal">
+                                 <span aria-hidden="true">&times;</span>
+                                 <span class="sr-only">Fechar</span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel">
+                              Editar História
+                          </h4>
+                      </div>
+                      <!-- Modal Body -->
+                      <text-angular class="modal-edit" ng-model="htmlVariable"></text-angular>
+
+<div ta-bind="text" ng-model="htmlcontenttwo" ta-readonly='disabled'></div>
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default"
+                                  data-dismiss="modal">
+                                      Fechar
+                          </button>
+                          <button type="button" ng-click="onClickSave()" class="btn btn-primary" data-dismiss="modal">
+                              Salvar Alterações
+                          </button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Historia Section End -->
+
+    <!-- Contato Section Start -->
+    <section id="contato" class="contact section" data-stellar-background-ratio="-0.2">
+      <div class="contact-form">
+        <div class="container" ng-controller="contatosController">
+          <div class="row">
+            <div class="col-lg-6 col-sm-6 col-xs-12" ng-mouseover="editCont=true" ng-mouseleave="editCont=false">
+              <div class="contact-us">
+                <h3>Contatos <i class="lnr lnr-pencil icon show"  ng-show="editCont" data-toggle="modal" data-target="#ModalEditCont"></i></h3>
+                <div class="contact-address">
+                  <p>{{endereco}}</p>
+                  <p class="phone">Telefone: <span>{{telefone}}</span></p>
+                  <p class="email">E-mail: <span>{{email}}</span></p>
+                </div>
+                <div class="social-icons">
+                  <ul>
+                    <li class="facebook"><a href="{{facebook}}"><i class="fa fa-facebook"></i></a></li>
+                    <li class="mail"><a><i class="fa fa-envelope" data-toggle="modal" data-target="#ModalEmail"></i></a></li>
+                    <!-- <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
+                    <div class="modal fade" id="ModalEmail" tabindex="-1" role="dialog"
+                               aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div ng-controller="emailController" class="modal-content modal-edit">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                  <button type="button" class="close"
+                                     data-dismiss="modal">
+                                         <span aria-hidden="true">&times;</span>
+                                         <span class="sr-only">Fechar</span>
+                                  </button>
+                                  <h4 class="modal-title" id="myModalLabel">
+                                      Mensagem de e-mail
+                                  </h4>
+                              </div>
+                              <!-- Modal Body -->
+                              <div class="modal-body">
+                                  <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label  class="col-sm-2 control-label"
+                                                  for="inputEmail3">Nome</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control modal-edit"
+                                            id="inputEmail3" placeholder="Nome" ng-model="nome"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label  class="col-sm-2 control-label"
+                                                for="inputEmail3">Email</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control modal-edit"
+                                          id="inputEmail3" placeholder="Email" ng-model="emailMsg"/>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label  class="col-sm-2 control-label"
+                                                for="inputEmail3">Assunto</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control modal-edit"
+                                          id="inputEmail3" placeholder="Assunto" ng-model="assunto"/>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label  class="col-sm-2 control-label"
+                                                for="inputEmail3">Corpo</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control modal-edit"
+                                          id="inputEmail3" placeholder="Corpo" ng-model="corpo"/>
+                                      </div>
+                                    </div>
+                                  </form>
+                              </div>
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-default"
+                                          data-dismiss="modal">
+                                              Fechar
+                                  </button>
+                                  <button ng-click="onClickEnviarEmail()" type="button" class="btn btn-primary" data-dismiss="modal">
+                                      Enviar
+                                  </button>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-xs-12" ng-mouseover="editInfo=true" ng-mouseleave="editInfo=false">
+                <h4>Informações Úteis <i class="lnr lnr-pencil icon show"  ng-show="editInfo" data-toggle="modal" data-target="#ModalEditInfo"></i></h4>
+                <div class="div-limit">
+                  <div ng-bind-html="infohtml" style="color: white"></div>
+                <!-- Trigger/Open The Modal -->
+                </div>
+                <!-- <a> -->
+                <button style="color: white;" id="myBtn" class="astext" data-toggle="modal" data-target="#InfoMore">Ver mais</button>
+                <!-- </a> -->
+                <!-- The Modal -->
+
+            </div>
+          </div>
+          <div id="InfoMore" class="modal fade" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <!-- Modal content -->
+            <div class="modal-content modal-edit">
+              <div class="modal-header">
+                <button type="button" class="close"
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Fechar</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Informações Úteis
+                </h4>
+              </div>
+              <div class="modal-body">
+                <div ng-bind-html="infohtml"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal editar Cont -->
+        <div class="modal fade" id="ModalEditCont" tabindex="-1" role="dialog"
+                   aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content modal-edit">
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                              <button type="button" class="close"
+                                 data-dismiss="modal">
+                                     <span aria-hidden="true">&times;</span>
+                                     <span class="sr-only">Fechar</span>
+                              </button>
+                              <h4 class="modal-title" id="myModalLabel">
+                                  Editar Contatos
+                              </h4>
+                          </div>
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                              <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                  <label  class="col-sm-2 control-label"
+                                            for="inputEmail3">Endereço</label>
+                                  <div class="col-sm-10">
+                                      <input type="text" class="form-control modal-edit"
+                                      id="inputEmail3" placeholder="Endereço" ng-model="endereco"/>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label  class="col-sm-2 control-label"
+                                            for="inputEmail3">Telefone</label>
+                                  <div class="col-sm-10">
+                                      <input type="text" class="form-control modal-edit"
+                                      id="inputEmail3" placeholder="Telefone" ng-model="telefone"/>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label  class="col-sm-2 control-label"
+                                            for="inputEmail3">Email</label>
+                                  <div class="col-sm-10">
+                                      <input type="text" class="form-control modal-edit"
+                                      id="inputEmail3" placeholder="Email" ng-model="email"/>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label  class="col-sm-2 control-label"
+                                            for="inputEmail3">Facebook</label>
+                                  <div class="col-sm-10">
+                                      <input type="text" class="form-control modal-edit"
+                                      id="inputEmail3" placeholder="Facebook" ng-model="facebook"/>
+                                  </div>
+                                </div>
+
+                              </form>
+                          </div>
+                          <!-- Modal Footer -->
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default"
+                                      data-dismiss="modal">
+                                          Fechar
+                              </button>
+                              <button type="button" ng-click="onClickSave()" class="btn btn-primary" data-dismiss="modal">
+                                  Salvar Alterações
+                              </button>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              <!--FIM - Modal editar Cont -->
+              <!-- Modal editar Info -->
+              <div class="modal fade" id="ModalEditInfo" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-edit">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="close"
+                               data-dismiss="modal">
+                                   <span aria-hidden="true">&times;</span>
+                                   <span class="sr-only">Fechar</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                Editar Informações
+                            </h4>
+                        </div>
+                        <!-- Modal Body -->
+                        <text-angular class="modal-edit" ng-model="infohtml"></text-angular>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default"
+                                    data-dismiss="modal">
+                                        Fechar
+                            </button>
+                            <button type="button" ng-click="onClickSave()" class="btn btn-primary" data-dismiss="modal">
+                                Salvar Alterações
+                            </button>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+              <!-- FIM - Modal Edit Info -->
+      </div>
+    </section>
+
+
+    <!-- Contact Section End -->
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lnr lnr-arrow-up"></i>
+    </a>
+
+
+    <a class="volun">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalVoluntario"> Seja um voluntário! </button>
+    </a>
+
+    <div class="modal fade" id="ModalVoluntario" tabindex="-1" role="dialog"
+               aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content modal-edit">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <button type="button" class="close"
+                     data-dismiss="modal">
+                         <span aria-hidden="true">&times;</span>
+                         <span class="sr-only">Fechar</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                      Formulário de voluntário
+                  </h4>
+              </div>
+              <!-- Modal Body -->
+              <div ng-controller="voluntarioController" class="modal-body">
+                  <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label"
+                                  for="inputEmail3">Nome</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control modal-edit"
+                            id="inputEmail3" placeholder="Nome" ng-model="nome"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label  class="col-sm-2 control-label"
+                                for="inputEmail3">Atividade</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control modal-edit"
+                          id="inputEmail3" placeholder="Atividade" ng-model="atividade"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label  class="col-sm-2 control-label"
+                                for="inputEmail3">Email</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control modal-edit"
+                          id="inputEmail3" placeholder="Email" ng-model="email"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label  class="col-sm-2 control-label"
+                                for="inputEmail3">Telefone</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control modal-edit"
+                          id="inputEmail3" placeholder="Telefone" ng-model="telefone"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label  class="col-sm-2 control-label"
+                                for="inputEmail3">Disponibilidade</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control modal-edit"
+                          id="inputEmail3" placeholder="Disponibilidade" ng-model="disponibilidade"/>
+                      </div>
+                    </div>
+
+                  </form>
+              </div>
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default"
+                          data-dismiss="modal">
+                              Fechar
+                  </button>
+                  <button ng-click="voluntarioClick()" type="button" class="btn btn-primary" data-dismiss="modal">
+                      Enviar
+                  </button>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="loader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="../js/jquery-min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.mixitup.js"></script>
+    <script src="../js/nivo-lightbox.js"></script>
+    <script src="../js/owl.carousel.js"></script>
+    <script src="../js/jquery.stellar.min.js"></script>
+    <script src="../js/jquery.nav.js"></script>
+    <script src="../js/scrolling-nav.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/smoothscroll.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/jquery.vide.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <script src="../js/form-validator.min.js"></script>
+    <script src="../js/contact-form-script.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- Angular -->
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/textAngular-rangy.min.js"></script>
+    <script src="../js/textAngular-sanitize.min.js"></script>
+    <script src="../js/textAngular.min.js"></script>
+
+    <!-- Aplicação Principal Angular-->
+    <script src="../appIndex.js"></script>
+    <script src="../controller/headerController.js"></script>
+    <script src="../controller/histController.js"></script>
+    <script src="../controller/servController.js"></script>
+    <script src="../controller/transpController.js"></script>
+    <script src="../controller/contriController.js"></script>
+    <script src="../controller/visitController.js"></script>
+    <script src="../controller/ativController.js"></script>
+    <script src="../controller/contatosController.js"></script>
+    <script src="../controller/menuController.js"></script>
+    <script src="../controller/emailController.js"></script>
+
+  </body>
+</html>

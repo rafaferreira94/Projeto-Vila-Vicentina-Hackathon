@@ -1,0 +1,115 @@
+
+
+.div-limit{
+    height: 100px;
+    color: black;
+    overflow: hidden;
+}
+
+.astext {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    color: #2E2F8F;
+    font-weight: bold;
+}
+
+.nav-section{
+    white-space: nowrap;
+}
+/*LUCCAS*/
+.show.ng-hide,
+.hide.ng-hide{
+  animation-name:fadeOut;
+  animation-duration: .5s;
+}
+
+.show{
+  animation-name:fadeIn;
+  animation-duration: .5s;
+}
+
+.modal-body .form-horizontal .col-sm-2,
+.modal-body .form-horizontal .col-sm-10 {
+    width: 100%
+}
+
+.modal-body .form-horizontal .control-label {
+    text-align: left;
+}
+.modal-body .form-horizontal .col-sm-offset-2 {
+    margin-left: 15px;
+}
+
+.modal-edit{
+  color:black !important;
+  text-align: left;
+}
+
+.modal-dialog{
+  max-width: 70%;
+  margin-top: 80px;
+}
+
+.fillingBox {
+    position: relative;
+    background: #2E2F8F;
+    color: white !important;
+    border-radius: 15px;
+}
+
+.btn.ng-scope{
+    color: black;
+}
+
+.column {
+    float: center;
+    width: 50%;
+    padding: 10px;
+}
+
+.contact{
+    background: #2E2F8F;
+    color: white;
+    position: relative;
+}
+
+.transp{
+    background: #2E2F8F;
+    color: white;
+    position: relative;
+}
+
+.serv{
+    background: #2E2F8F;
+    color: white;
+    position: relative;
+}
+
+#visita {
+    background: url(../img/fachada.jpg) fixed no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#visita::after {
+    content: '';
+    width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.visita-filho{
+    position: relative !important;
+    z-index: 2 !important;
+    color:white;
+}
+
+.linkDoc:hover{
+    color: white !important;
+}

@@ -1,0 +1,151 @@
+<html lang="en" ng-app="myAppIndex">
+<head>
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    </head>
+    <body>
+  <div ng-controller="voluntarioController">
+
+      <!-- Controles de Inclusão e Consulta -->
+      <div class="row" style="margin-left: 10px;">
+          <div class="col-md-10 col-sm-6 col-xs-12">
+
+              <div class="form-group mb-2 mr-sm-2 mb-sm-0">
+                  <label for="txtConsultar" style="padding-top: 30px;">Consulta de voluntarios</label>
+                  <input type="text" ng-model="pesquisa" class="form-control" id="txtConsultar"
+                         placeholder="Informe o nome do voluntário">
+              </div>
+          </div>
+          <div class="col-md-1 col-sm-6 col-xs-12" style="margin-left: 23px;">
+              <button style="position: relative;top: 23px;" type="button" ng-click="incluir()" class="btn btn-success"><i
+                      class="fa fa-file-o" aria-hidden="true"></i> Incluir
+              </button>
+          </div>
+      </div>
+
+
+      <!-- GRID -->
+      <div class="row">
+          <div class="col-md-12 col-sm-6 col-xs-12">
+              <div class="x_panel">
+                  <div class="x_title">
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <table class="table table-striped" style="margin-left: 20px;">
+
+                          <thead>
+                          <tr>
+                              <th>Id</th>
+                              <th>Nome</th>
+                              <th>Login</th>
+                              <th>E-mail</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr ng-repeat="voluntario in listVoluntarios | filter:pesquisa">
+                                      <th scope="row">{{voluntario.ID_VOLUNTARIOS}}</th>
+                              <td>{{voluntario.NOME_VOLUNTARIO}}</td>
+                              <td>{{voluntario.TELEFONE_VOLUNTARIOS}}</td>
+                              <td>{{voluntario.ATIVIDADE_VOLUNTARIO}}</td>
+                              <td style="width: 20px;">
+                                  <button ng-click="openWindow(voluntario)" type="button" class="btn btn-success"><i
+                                          class="fa fa-eye" aria-hidden="true"></i></button>
+                              </td>
+                              <td style="width: 20px;">
+                                  <button ng-click="delete(voluntario)" type="button" class="btn btn-success"><i class="fa "
+                                                                                                              aria-hidden="true"></i>X
+                                  </button>
+                              </td>
+                          </tr>
+                          </tbody>
+                      </table>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- MODAL INSTITUIÇÃO-->
+      <!-- Modal -->
+      <div class="modal fade" id="modalVoluntario" role="dialog">
+          <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">voluntário {{nomevoluntario}}</h4>
+                  </div>
+                  <div class="modal-body">
+                      <form name="mainForm">
+
+
+                         <div class="input-group col-md-offset-2 col-md-8">
+                              <span class="input-group-addon">Id</span>
+                              <input enable="false" class="form-control" ng-model="voluntario.idVoluntario" id="idvoluntario"
+                                     name="idvoluntario"
+                                     type="text" disabled>
+                          </div>
+                          <div class="input-group col-md-offset-2 col-md-8">
+                              <span class="input-group-addon">Nome</span>
+                              <input class="form-control" ng-model="voluntario.nome" id="nome" name="nome" type="text">
+                          </div>
+                          <div class="input-group col-md-offset-2 col-md-8">
+                              <span class="input-group-addon">Atividade</span>
+                              <input class="form-control" ng-model="voluntario.atividade" id="sobrenome" name="sobrenome" type="text">
+                          </div>
+
+                          <div class="input-group col-md-offset-2 col-md-8">
+                              <span class="input-group-addon">E-mail</span>
+                              <input class="form-control" ng-model="voluntario.email" id="dataNascimento"
+                                     name="emailvoluntario" type="text">
+                          </div>
+
+
+                          <div class="input-group col-md-offset-2 col-md-8">
+                              <span class="input-group-addon">Telefone</span>
+                              <input type="text" class="form-control" ng-model="voluntario.telefone" id="login" name="login">
+                          </div>
+
+                          <div class="input-group col-md-offset-2 col-md-8">
+                              <span class="input-group-addon">Disponibilidade</span>
+                              <input type="text" class="form-control" ng-model="voluntario.disponibilidade" id="senha" name="senha">
+                          </div>
+
+                          <div>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default btn-fechar" data-dismiss="modal">Fechar</button>
+                      <button type="button" class="btn btn-success" data-dismiss="modal"
+                              ng-click="salvarVoluntario(voluntario)">Salvar
+                      </button>
+                  </div>
+              </div>
+              {{operacao}}
+          </div>
+      </div>
+
+  </div>
+  <script src="js/jquery-min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Angular -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/textAngular-rangy.min.js"></script>
+  <script src="js/textAngular-sanitize.min.js"></script>
+  <script src="js/textAngular.min.js"></script>
+
+  <!-- Aplicação Principal Angular-->
+  <script src="appIndex.js"></script>
+  <script src="controller/voluntarioPageController.js"></script>
+</body>
+</html>
